@@ -4,8 +4,7 @@ function print(a) {
     console.log(a)
 }
 
-function palavrasComMaisDeXLetras(array = []) {
-    let letras = 5
+function palavrasComMaisDeXLetras(array = [], letras = 5) {
     if (array === []) {
         print("Insira uma lista de palavras!")
     } else {
