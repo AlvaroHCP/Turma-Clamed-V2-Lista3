@@ -4,31 +4,30 @@ function print(a) {
     console.log(a)
 }
 
-function numeroEPrimo(numero = 0) {
+function Fibonacci(numero = 0) {
     if (numero < 0) {
         print("Digite um número válido!")
-    } else if (numero === 0) {
-        print("Digite um número!")
     } else {
-        let contador = 0
+        let fibonacci = []
+        let soma = 0
         let i = 0
-        do {
-            if (numero % i === 0) {
-                contador++
-                if (contador > 2) {
-                    print(`O número ${numero} não é primo`)
-                    return -1
-                }
+        print(`\nA sequência até o número ${numero} é: `)
+        while (soma <= numero) {
+            fibonacci.push(soma)
+
+            if (i === 0) {
+                soma += 1
+            } else {
+                soma += fibonacci[i - 1]
             }
             i++
-        } while (i <= numero)
-        print(`O número ${numero} é primo`)
-        return 1
+        }
+        print(fibonacci.join(", ") + "\n")
     }
 }
 
-// for (let i = 0; i <= 25; i++) {
-//     numeroEPrimo(i)
+// for (let i = 0; i <= 21; i = i + 3) {
+//     Fibonacci(i)
 // }
 
-numeroEPrimo(5)
+Fibonacci(10)
