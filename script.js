@@ -4,26 +4,21 @@ function print(a) {
     console.log(a)
 }
 
-let dados = [true, { nome: "Alvaro", idade: 36 }, "false"]
-
-function adicionaElemento(array = [], elemento = 0) {
-    array.push(elemento)
-    print(array)
-    return array
+function soma(a = 0, b = 0) {
+    return a + b
+}
+function subtrai(a = 0, b = 0) {
+    return a - b
+}
+function multiplica(a = 0, b = 0) {
+    return a * b
+}
+function divide(a = 0, b = 1) {
+    return a / b
 }
 
-function removerUltimoElemento(array = []) {
-    array.pop()
-    print(array)
-    return array
+function calculadora(funcao, a = 0, b = 1) {
+    print(funcao(a, b))
 }
 
-function removerElementosIntervalo(array = [0], valorInicial = 0, valorFinal = 1) {
-    array.splice(valorInicial, valorFinal)
-    print(array)
-    return array
-}
-
-adicionaElemento(dados, "Esse é apenas um teste!!!")
-removerUltimoElemento(dados)
-removerElementosIntervalo(dados, 1, 2)
+calculadora(divide, 5, 2)
