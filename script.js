@@ -4,42 +4,26 @@ function print(a) {
     console.log(a)
 }
 
-let dados = [{
-    nome: "Coca-Cola",
-    preco: 7.20
-},
-{
-    nome: "Guarana Antartica",
-    preco: 6.59
-},
-{
-    nome: "farinha de trigo",
-    preco: 4.30
-},
-{
-    nome: "fubá",
-    preco: 5.50
-}]
+let dados = [true, { nome: "Alvaro", idade: 36 }, "false"]
 
-function nomeEPreco(array) {
-    let i = 0
-    let precoTotal = 0
-    for (const elemento of dados) {
-        precoTotal += Number(elemento.preco)
-        print(`O produto ${Number(i) + 1} é \"${elemento.nome}\" e custa R$${String(Number(elemento.preco).toFixed(2)).replace(".", ",")}`)
-        i++
-    }
-    print(`\n\nNo total são ${dados.length} produtos cadastrados, e o preço total é R$${String((precoTotal).toFixed(2)).replace(".", ",")}\n`)
+function adicionaElemento(array = [], elemento = 0) {
+    array.push(elemento)
+    print(array)
+    return array
 }
 
-// function nomeEPreco(array) {
-//     let precoTotal = 0
-//     for (const elemento in dados) {
-//         precoTotal += Number(dados[elemento].preco)
-//         print(`O produto ${Number(elemento) + 1} é \"${dados[elemento].nome}\" e custa R$${String((dados[elemento].preco).toFixed(2)).replace(".", ",")}`)
-//     }
-//     print(`\n\nNo total são ${dados.length} produtos cadastrados, e o preço total é R$${String((precoTotal).toFixed(2)).replace(".", ",")}\n`)
-// }
+function removerUltimoElemento(array = []) {
+    array.pop()
+    print(array)
+    return array
+}
 
-nomeEPreco(dados)
+function removerElementosIntervalo(array = [0], valorInicial = 0, valorFinal = 1) {
+    array.splice(valorInicial, valorFinal)
+    print(array)
+    return array
+}
 
+adicionaElemento(dados, "Esse é apenas um teste!!!")
+removerUltimoElemento(dados)
+removerElementosIntervalo(dados, 1, 2)
